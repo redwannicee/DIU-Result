@@ -1,4 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const isProd = process.env.NODE_ENV === 'production';
 
-module.exports = nextConfig
+module.exports = {
+  output: 'export',
+  basePath: isProd ? '/diu-cgpa' : '',
+  images: {
+    unoptimized: true,
+  },
+};
